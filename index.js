@@ -1,3 +1,5 @@
+const { setCategory } = require("./functions/setCategory");
+
 const { setProduct } = require("./functions/setProduct");
 const { productExist } = require("./functions/productExist");
 const { categoryExist } = require("./functions/categoryExist")
@@ -20,7 +22,7 @@ app.post('/', async (req, res) => {
   const categoryExistAlready = await categoryExist(req.body.name)
 
   if (categoryExistAlready) {
-    
+
     const productExistAlready = await productExist(req.body.products[0].name)
 
     if (productExistAlready)
@@ -29,6 +31,9 @@ app.post('/', async (req, res) => {
       await setProduct(req)
       response.message = "Product created"
     }
+  } else {
+    await setCategory(req)
+    response.message = "Category with product created"
   }
   res.send(response)
 })
