@@ -1,7 +1,6 @@
-const { setCategory } = require("./functions/setCategory");
-
-const { setProduct } = require("./functions/setProduct");
-const { productExist } = require("./functions/productExist");
+const { setCategory } = require("./functions/setCategory")
+const { setProduct } = require("./functions/setProduct")
+const { productExist } = require("./functions/productExist")
 const { categoryExist } = require("./functions/categoryExist")
 const { getData } = require("./functions/getData")
 
