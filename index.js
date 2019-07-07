@@ -1,3 +1,4 @@
+const { onlyLetters } = require("./functions/onlyLetters");
 const { setCategory } = require("./functions/setCategory")
 const { setProduct } = require("./functions/setProduct")
 const { productExist } = require("./functions/productExist")
@@ -43,12 +44,6 @@ app.post('/', async (req, res) => {
   res.send(response)
 })
 
-function onlyLetters(product, category) {
-  if (product.search('[^a-zA-Z]+') == -1 && category.search('[^a-zA-Z]+') == -1)
-    return true
-  else
-    return false
-}
 const printMessage = () => { console.log('Running at http://localhost:3000/') }
 
 app.listen(3000, printMessage)  
