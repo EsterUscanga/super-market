@@ -3,7 +3,7 @@ const { db } = require("./db")
 
 async function setProduct(req) {
   const categoryName = req.body.name
-  const newProduct = req.body.products[0]
+  const newProduct = req.body.products
   let index
   let data = await getData()
   for (let i in data) {
