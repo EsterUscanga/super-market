@@ -1,3 +1,4 @@
+const { put } = require("./routes/put");
 const { delet } = require("./routes/delet")
 const { getData } = require("./functions/getData")
 const { post } = require("./routes/post")
@@ -17,6 +18,8 @@ app.get('/', async (req, res) => {
 app.post('/', post())
 
 app.delete('/', delet())
+
+app.put('/', put())
 
 const printMessage = () => { console.log('Running at http://localhost:3000/') }
 
