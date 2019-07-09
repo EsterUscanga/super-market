@@ -4,6 +4,8 @@ async function productExist(category, product) {
   let flag = false
   let data = await getData()
   for (let i in data) {
+    if (data[i] == null)
+      continue
     if (data[i].name == category) {
       for (let j in data[i].products) {
         if (data[i].products[j].name == product) {
