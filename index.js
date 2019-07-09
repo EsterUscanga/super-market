@@ -1,5 +1,5 @@
 const { getAll } = require("./routes/getAll")
-const { getProductById } = require("./routes/getProductById");
+const { getProductById } = require("./routes/getProductById")
 const { put } = require("./routes/put");
 const { delet } = require("./routes/delet")
 const { post } = require("./routes/post")
