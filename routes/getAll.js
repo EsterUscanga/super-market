@@ -1,4 +1,6 @@
 const { getData } = require("../functions/getData")
+const { getInvoices } = require("../functions/getInvoices")
+
 
 function getAll() {
   return async (req, res) => {
