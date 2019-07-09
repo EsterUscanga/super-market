@@ -1,6 +1,7 @@
+const { getAll } = require("./routes/getAll");
+const { getProductById } = require("./routes/getProductById");
 const { put } = require("./routes/put");
 const { delet } = require("./routes/delet")
-const { getData } = require("./functions/getData")
 const { post } = require("./routes/post")
 
 const express = require('express')
@@ -10,17 +11,19 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.get('/', async (req, res) => {
-  let data = await getData()
-  res.send(data)
-})
+app.get('/user', getAll())
 
-app.post('/', post())
+app.get('/user:category/:product', getProductById())
 
-app.delete('/', delet())
+app.post('/admin', post())
 
-app.put('/', put())
+app.delete('/admin', delet())
+
+app.put('/admin', put())
 
 const printMessage = () => { console.log('Running at http://localhost:3000/') }
 
 app.listen(3000, printMessage)
+
+
+

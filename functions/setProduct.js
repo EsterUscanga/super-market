@@ -7,6 +7,8 @@ async function setProduct(req) {
   let index
   let data = await getData()
   for (let i in data) {
+    if (data[i] == null)
+      continue
     if (data[i].name == categoryName) {
       newProduct.id = data[i].products.length + 1
       index = i
